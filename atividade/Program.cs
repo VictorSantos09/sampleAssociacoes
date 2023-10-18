@@ -4,19 +4,20 @@ using atividade.Services;
 
 FakeDatabase.InstituicaoEnsino = new InstituicaoEnsinoModel("SENAC");
 
-bool rodar = true;
 do
 {
     try
     {
-        rodar = Menu();
+        bool rodar = Menu();
+        if (rodar == false)
+            break;
     }
     catch (Exception ex)
     {
         ConsoleExtension.Write(ex.Message, ConsoleColor.Red);
         throw;
     }
-} while (rodar);
+} while (true);
 
 
 bool Menu()
@@ -32,7 +33,7 @@ bool Menu()
     ConsoleExtension.Write("INSTITUIÇÃO DE ENSINO");
     ConsoleExtension.Write("5 - Adicionar Professor");
     ConsoleExtension.Write("6 - Remover Professor");
-    var option = int.Parse(ConsoleExtension.Read());
+    int option = int.Parse(ConsoleExtension.Read());
 
     switch (option)
     {
@@ -66,7 +67,7 @@ bool Menu()
 void VerProfessores()
 {
     ConsoleExtension.Clear();
-    foreach (var p in FakeDatabase.Professores)
+    foreach (ProfessorModel p in FakeDatabase.Professores)
     {
         ConsoleExtension.Write(p.MostrarDados());
     }
@@ -75,7 +76,7 @@ void VerProfessores()
 void verAlunos()
 {
     ConsoleExtension.Clear();
-    foreach (var a in FakeDatabase.Alunos)
+    foreach (AlunoModel a in FakeDatabase.Alunos)
     {
         ConsoleExtension.Write(a.ToString());
     }

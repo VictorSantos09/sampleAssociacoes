@@ -12,11 +12,11 @@ internal static class ConsoleExtension
         do
         {
             Console.Write("DIGITE: ");
-            var text = Console.ReadLine();
+            string? text = Console.ReadLine();
 
             if (string.IsNullOrEmpty(text))
                 Write("Digite algo válido", ConsoleColor.Red);
-
+            
             else
                 return text;
         } while (true);
@@ -27,9 +27,10 @@ internal static class ConsoleExtension
         Console.ForegroundColor = color;
         if (uppercase)
             Console.WriteLine(message.ToUpper());
-
+        
         else
             Console.WriteLine(message);
+
         Console.ForegroundColor = ConsoleColor.White;
     }
 

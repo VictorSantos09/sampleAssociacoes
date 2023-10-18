@@ -17,7 +17,7 @@ internal class ProfessorModel
     {
         if (Endereco != null)
         {
-            var endereco = $"Cidade: {Endereco.Cidade} - Rua: {Endereco.Rua} - N°{Endereco.Numero} - CEP: {Endereco.CEP}";
+            string endereco = $"Cidade: {Endereco.Cidade} - Rua: {Endereco.Rua} - N°{Endereco.Numero} - CEP: {Endereco.CEP}";
 
             return $"Meu nome é {Nome}, tenho o sexo {Sexo}, meu número de matricula é {NumeroMatricula} e meu endereço é {endereco}";
         }

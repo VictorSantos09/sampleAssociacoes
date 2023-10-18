@@ -16,6 +16,6 @@ internal class InstituicaoEnsinoModel
 
     public void RemoverProfessor(ProfessorModel professor)
     {
-        Professores.Remove(professor);
+        _ = Professores.Remove(professor);
     }
 }
