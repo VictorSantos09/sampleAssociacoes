@@ -8,16 +8,13 @@ internal class TurmaService
         do
         {
             string nome = ConsoleExtension.WriteAndRead("Nome");
-            string periodo = ConsoleExtension.WriteAndRead("Periodo");
+            string periodo = ConsoleExtension.WriteAndRead("Período");
 
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(periodo))
-            {
-                ConsoleExtension.Write("Nome e periodo são obrigatórios", ConsoleColor.Yellow);
-            }
+                ConsoleExtension.Write("Nome e período são obrigatórios", ConsoleColor.Yellow);
+            
             else
-            {
                 return new TurmaModel(nome, periodo);
-            }
         } while (true);
     }
 

@@ -34,5 +34,5 @@ internal class FakeDatabase
         new(Salas.ElementAt(0),Turmas.ElementAt(0), Professores.ElementAt(0))
     };
 
-    public static InstituicaoEnsinoModel InstituicaoEnsino;
+    public static InstituicaoEnsinoModel InstituicaoEnsino = new("SENAC");
 }

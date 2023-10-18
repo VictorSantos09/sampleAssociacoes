@@ -14,9 +14,7 @@ internal class ProfessorService
         ProfessorModel professor = new(nome, sexo, numeroMatricula);
 
         if (option == "1")
-        {
             CadastrarEndereco(professor);
-        }
 
         return professor;
     }

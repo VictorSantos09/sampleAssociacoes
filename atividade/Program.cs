@@ -2,8 +2,6 @@
 using atividade.Models;
 using atividade.Services;
 
-FakeDatabase.InstituicaoEnsino = new InstituicaoEnsinoModel("SENAC");
-
 do
 {
     try
@@ -40,7 +38,7 @@ bool Menu()
         case 0:
             return false;
         case 1:
-            FakeDatabase.Alunos.Add(AlunoService.Cadastrar(FakeDatabase.Alunos));
+            FakeDatabase.Alunos.Add(AlunoService.Cadastrar());
             break;
         case 2:
             FakeDatabase.Professores.Add(ProfessorService.Cadastrar());

@@ -12,9 +12,7 @@ internal class SalaService
             SalaModel sala = new(nome, capacidade);
 
             if (capacidade > 0 && string.IsNullOrEmpty(nome) == false)
-            {
                 return sala;
-            }
 
             ConsoleExtension.Write("Nome deve ser válido e capacidade maior do que 0", ConsoleColor.Yellow);
         } while (true);
