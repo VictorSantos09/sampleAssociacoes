@@ -7,7 +7,7 @@ internal class FakeDatabase
     {
         new ProfessorModel("Alan", "M", 3)
         {
-            Endereco = new ("Bolivia", 78, "Blumenau", "78524354")
+            Endereco = new ("Bolivia", 78, "78524354")
         }
     };
 

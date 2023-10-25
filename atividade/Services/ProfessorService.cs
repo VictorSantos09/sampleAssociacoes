@@ -23,9 +23,8 @@ internal class ProfessorService
     {
         string rua = ConsoleExtension.WriteAndRead("rua");
         int numero = int.Parse(ConsoleExtension.WriteAndRead("numero"));
-        string cidade = ConsoleExtension.WriteAndRead("cidade");
         string cep = ConsoleExtension.WriteAndRead("CEP");
 
-        _ = professor.CadastrarEndereco(new EnderecoModel(rua, numero, cidade, cep));
+        _ = professor.CadastrarEndereco(new EnderecoModel(rua, numero, cep));
     }
 }

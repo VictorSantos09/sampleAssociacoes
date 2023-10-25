@@ -4,11 +4,13 @@ internal class AlunoModel
     public string Nome { get; set; }
     public string Sexo { get; set; }
     public AlunoModel AlunoDupla { get; set; }
+    public MatriculaModel Matricula { get; set; } 
 
-    public AlunoModel(string nome, string sexo)
+    public AlunoModel(string nome, string sexo, MatriculaModel matricula)
     {
         Nome = nome;
         Sexo = sexo;
+        Matricula = matricula;
     }
 
     public override string? ToString()

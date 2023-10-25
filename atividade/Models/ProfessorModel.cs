@@ -29,9 +29,6 @@ internal class ProfessorModel
         if (endereco is null)
             return false;
 
-        else if (string.IsNullOrEmpty(endereco.Cidade))
-            return false;
-
         else if (endereco.Numero < 0)
             return false;
 
