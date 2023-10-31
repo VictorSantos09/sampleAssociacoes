@@ -7,7 +7,8 @@ public static class MatriculaService
     {
         int numero = int.Parse(ConsoleExtension.WriteAndRead("Número da matricula"));
         DateTime data = DateTime.Parse(ConsoleExtension.WriteAndRead("Data da matricula"));
-        var resultado = new MatriculaModel(numero, data);
-        return resultado;
+        var matricula = new MatriculaModel(numero, data);
+        FakeDatabase.Matriculas.Add(matricula);
+        return matricula;
     }
 }

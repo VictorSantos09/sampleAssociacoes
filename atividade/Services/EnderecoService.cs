@@ -11,6 +11,7 @@ public static class EnderecoService
         CidadeModel cidade = CidadeService.Criar();
 
         EnderecoModel endereco = new EnderecoModel(rua, numero, cep, cidade);
+        FakeDatabase.Enderecos.Add(endereco);
         return endereco;
     }
 }

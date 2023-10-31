@@ -16,7 +16,7 @@ internal static class ConsoleExtension
 
             if (string.IsNullOrEmpty(text))
                 Write("Digite algo válido", ConsoleColor.Red);
-            
+
             else
                 return text;
         } while (true);
@@ -27,7 +27,7 @@ internal static class ConsoleExtension
         Console.ForegroundColor = color;
         if (uppercase)
             Console.WriteLine(message.ToUpper());
-        
+
         else
             Console.WriteLine(message);
 

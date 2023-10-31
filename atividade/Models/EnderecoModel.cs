@@ -1,5 +1,7 @@
-﻿namespace atividade.Models;
-public class EnderecoModel
+﻿using atividade.Interfaces;
+
+namespace atividade.Models;
+public class EnderecoModel : ILocalizacao
 {
     public string Rua { get; set; }
     public int Numero { get; set; }
@@ -17,5 +19,10 @@ public class EnderecoModel
     public EnderecoModel()
     {
 
+    }
+
+    public string MapaBase64(float latitude, float longitude)
+    {
+        return $"{latitude} {longitude}";
     }
 }

@@ -12,7 +12,7 @@ public static class CidadeService
         string nomeCidade = ConsoleExtension.WriteAndRead("Nome da cidade");
         string siglaUf = ConsoleExtension.WriteAndRead("Sigla UF");
         CidadeModel cidade = new(nomePrefeito, partidoPrefeito, numeroPrefeito, sexoPrefeito, nomeCidade, siglaUf);
-        FakeDatabase.Cida
+        FakeDatabase.Cidades.Add(cidade);
         return cidade;
     }
 }

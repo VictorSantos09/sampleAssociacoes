@@ -6,7 +6,7 @@ public class PrefeitoModel : PessoaModel
 
     public PrefeitoModel(int numero, string sexo) : base(numero, sexo)
     {
-        
+
     }
 
     public PrefeitoModel(string nome, string partido, int numero, string sexo) : base(numero, sexo)

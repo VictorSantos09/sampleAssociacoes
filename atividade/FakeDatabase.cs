@@ -9,5 +9,7 @@ internal static class FakeDatabase
     public static List<SalaModel> Salas = new();
     public static List<AulaModel> Aulas = new();
     public static List<CidadeModel> Cidades = new();
+    public static List<EnderecoModel> Enderecos = new();
+    public static List<MatriculaModel> Matriculas = new();
     public static InstituicaoEnsinoModel InstituicaoEnsino = new("SENAC");
 }

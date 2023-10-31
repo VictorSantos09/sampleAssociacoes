@@ -12,9 +12,13 @@ internal class TurmaService
 
             if (string.IsNullOrEmpty(nome) || string.IsNullOrEmpty(periodo))
                 ConsoleExtension.Write("Nome e período são obrigatórios", ConsoleColor.Yellow);
-            
+
             else
-                return new TurmaModel(nome, periodo);
+            {
+                TurmaModel turma = new(nome, periodo);
+                FakeDatabase.Turmas.Add(turma);
+                return turma;
+            }
         } while (true);
     }
 

@@ -10,7 +10,7 @@ internal class AlunoService
             string nome = ConsoleExtension.WriteAndRead("Nome");
             string sexo = ConsoleExtension.WriteAndRead("Sexo");
             int numero = int.Parse(ConsoleExtension.WriteAndRead("Numero do aluno"));
-            
+
             MatriculaModel matricula = MatriculaService.Criar();
 
             AlunoModel aluno = new(nome, sexo, matricula, numero);
