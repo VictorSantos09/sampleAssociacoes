@@ -1,5 +1,5 @@
 ﻿namespace atividade.Models;
-internal class AulaModel
+public class AulaModel
 {
     public SalaModel Sala { get; set; }
     public TurmaModel Turma { get; set; }
@@ -10,10 +10,5 @@ internal class AulaModel
         Sala = sala;
         Turma = turma;
         Professor = professor;
-    }
-
-    public override string ToString()
-    {
-        return $"Sala: {Sala.Nome} - Turma: {Turma.Nome} - Período: {Turma.Periodo} - Professor: {Professor.Nome}";
     }
 }

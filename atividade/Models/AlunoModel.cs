@@ -1,12 +1,11 @@
 ﻿namespace atividade.Models;
-internal class AlunoModel
+public class AlunoModel : PessoaModel
 {
     public string Nome { get; set; }
-    public string Sexo { get; set; }
     public AlunoModel AlunoDupla { get; set; }
     public MatriculaModel Matricula { get; set; } 
 
-    public AlunoModel(string nome, string sexo, MatriculaModel matricula)
+    public AlunoModel(string nome, string sexo, MatriculaModel matricula, int numero) : base(numero, sexo) 
     {
         Nome = nome;
         Sexo = sexo;

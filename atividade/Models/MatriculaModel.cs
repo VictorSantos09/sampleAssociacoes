@@ -1,5 +1,5 @@
 ﻿namespace atividade.Models;
-internal class MatriculaModel
+public class MatriculaModel
 {
     public int Numero { get; set; }
     public DateTime Data { get; set; }

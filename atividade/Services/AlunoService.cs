@@ -9,11 +9,18 @@ internal class AlunoService
         {
             string nome = ConsoleExtension.WriteAndRead("Nome");
             string sexo = ConsoleExtension.WriteAndRead("Sexo");
-            AlunoModel aluno = new(nome, sexo);
+            int numero = int.Parse(ConsoleExtension.WriteAndRead("Numero do aluno"));
+            
+            MatriculaModel matricula = MatriculaService.Criar();
 
-            bool result = FormarDupla(aluno);
-            if (result)
+            AlunoModel aluno = new(nome, sexo, matricula, numero);
+
+            bool isDplaFormada = FormarDupla(aluno);
+            if (isDplaFormada)
+            {
+                FakeDatabase.Alunos.Add(aluno);
                 return aluno;
+            }
 
             ConsoleExtension.Write("Dupla não é permitida, tente novamente", ConsoleColor.Yellow);
         } while (true);
@@ -21,11 +28,15 @@ internal class AlunoService
 
     private static bool FormarDupla(AlunoModel alunoPrincipal)
     {
-        string nome = ConsoleExtension.WriteAndRead("Nome da dupla");
-        string sexo = ConsoleExtension.WriteAndRead("Sexo da dupla");
-        AlunoModel aluno = new(nome, sexo);
+        string nome = ConsoleExtension.WriteAndRead("Nome");
+        string sexo = ConsoleExtension.WriteAndRead("Sexo");
+        int numero = int.Parse(ConsoleExtension.WriteAndRead("Numero do aluno"));
 
-        AlunoModel? duplaFormada = FakeDatabase.Alunos.Find(x => x.AlunoDupla != null && x.AlunoDupla.Nome == nome);
+        MatriculaModel matricula = MatriculaService.Criar();
+
+        AlunoModel aluno = new(nome, sexo, matricula, numero);
+
+        AlunoModel? duplaFormada = FakeDatabase.Alunos.Find(x => x.AlunoDupla != null && x.AlunoDupla.Nome == aluno.Nome);
         if (duplaFormada != null)
         {
             Console.WriteLine($"{duplaFormada.Nome} tem dupla com {duplaFormada.AlunoDupla.Nome}. Tente novamente", ConsoleColor.Yellow);

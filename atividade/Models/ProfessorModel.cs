@@ -1,15 +1,14 @@
 ﻿namespace atividade.Models;
-internal class ProfessorModel
+public class ProfessorModel : PessoaModel
 {
     public string Nome { get; set; }
-    public string Sexo { get; set; }
     public int NumeroMatricula { get; set; }
     public EnderecoModel? Endereco { get; set; }
+    public InstituicaoEnsinoModel InstituicaoEnsino { get; set; }
 
-    public ProfessorModel(string nome, string sexo, int numeroMatricula)
+    public ProfessorModel(string nome, string sexo, int numeroMatricula, int numero) : base(numero, sexo)
     {
         Nome = nome;
-        Sexo = sexo;
         NumeroMatricula = numeroMatricula;
     }
 
@@ -29,7 +28,7 @@ internal class ProfessorModel
         if (endereco is null)
             return false;
 
-        else if (endereco.Numero < 0)
+        else if (endereco.Numero <= 0)
             return false;
 
         else if (string.IsNullOrEmpty(endereco.CEP))

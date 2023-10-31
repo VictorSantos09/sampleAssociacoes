@@ -8,23 +8,22 @@ internal class ProfessorService
         string nome = ConsoleExtension.WriteAndRead("Nome");
         string sexo = ConsoleExtension.WriteAndRead("Sexo");
         int numeroMatricula = int.Parse(ConsoleExtension.WriteAndRead("Numero da matricula"));
+        int numero = int.Parse(ConsoleExtension.WriteAndRead("Nº do professor"));
 
-        string option = ConsoleExtension.WriteAndRead("Deseja cadastrar o endereço?\n 1 - SIM\n 2 - NÃO");
+        string opcao = ConsoleExtension.WriteAndRead("Deseja cadastrar o endereço?\n 1 - SIM\n 2 - NÃO");
 
-        ProfessorModel professor = new(nome, sexo, numeroMatricula);
+        ProfessorModel professor = new(nome, sexo, numeroMatricula, numero);
 
-        if (option == "1")
+        if (opcao == "1")
             CadastrarEndereco(professor);
 
+        FakeDatabase.Professores.Add(professor);
         return professor;
     }
 
     private static void CadastrarEndereco(ProfessorModel professor)
     {
-        string rua = ConsoleExtension.WriteAndRead("rua");
-        int numero = int.Parse(ConsoleExtension.WriteAndRead("numero"));
-        string cep = ConsoleExtension.WriteAndRead("CEP");
-
-        _ = professor.CadastrarEndereco(new EnderecoModel(rua, numero, cep));
+        EnderecoModel endereco = EnderecoService.Criar();
+        _ = professor.CadastrarEndereco(endereco);
     }
 }

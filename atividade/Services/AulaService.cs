@@ -10,6 +10,8 @@ internal class AulaService
         ProfessorModel professor = ProfessorService.Cadastrar();
 
         AulaModel aula = new(sala, turma, professor);
+        
+        FakeDatabase.Aulas.Add(aula);
         ConsoleExtension.Write("Aula criada com sucesso", ConsoleColor.Green);
         return aula;
     }

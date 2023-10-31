@@ -1,5 +1,5 @@
 ﻿namespace atividade.Models;
-internal class TurmaModel
+public class TurmaModel
 {
     public string Nome { get; set; }
     public string Periodo { get; set; }
@@ -8,10 +8,5 @@ internal class TurmaModel
     {
         Nome = nome;
         Periodo = periodo;
-    }
-
-    public override string ToString()
-    {
-        return $"Nome: {Nome} - Periodo: {Periodo}";
     }
 }
