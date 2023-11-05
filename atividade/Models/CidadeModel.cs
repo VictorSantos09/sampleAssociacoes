@@ -12,11 +12,11 @@ public class CidadeModel : ILocalizacao
 
     }
 
-    public CidadeModel(string nomePrefeito, string partidoPrefeito, int numeroPrefeito, string sexoPrefeito, string nomeCidade, string siglaUF)
+    public CidadeModel(string nomePrefeito, string partidoPrefeito,  string sexoPrefeito, string nomeCidade, string siglaUF)
     {
         Nome = nomeCidade;
         SiglaUF = siglaUF;
-        Prefeito = new(nomePrefeito, partidoPrefeito, numeroPrefeito, sexoPrefeito);
+        Prefeito = new(nomePrefeito, partidoPrefeito, sexoPrefeito);
     }
 
     public string MapaBase64(float latitude, float longitude)

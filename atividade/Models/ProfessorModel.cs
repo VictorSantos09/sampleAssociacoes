@@ -1,12 +1,11 @@
 ﻿namespace atividade.Models;
 public class ProfessorModel : PessoaModel
 {
-    public string Nome { get; set; }
     public int NumeroMatricula { get; set; }
     public EnderecoModel? Endereco { get; set; }
     public InstituicaoEnsinoModel InstituicaoEnsino { get; set; }
 
-    public ProfessorModel(string nome, string sexo, int numeroMatricula, int numero) : base(numero, sexo)
+    public ProfessorModel(string nome, string sexo, int numeroMatricula) : base(nome, sexo)
     {
         Nome = nome;
         NumeroMatricula = numeroMatricula;

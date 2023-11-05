@@ -1,12 +1,12 @@
 ﻿namespace atividade.Models;
 public class PessoaModel
 {
-    public int Numero { get; set; }
+    public string Nome { get; set; }
     public string Sexo { get; set; }
 
-    public PessoaModel(int numero, string sexo)
+    public PessoaModel(string sexo, string nome)
     {
-        Numero = numero;
         Sexo = sexo;
+        Nome = nome;
     }
 }
